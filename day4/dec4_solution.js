@@ -9,70 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-function evaluateStr(str, numPosition) {
-    if (numPosition[0] < 2 && numPosition[numPosition.length - 1]) {
-    }
-}
 function loadFile(fileName) {
     return __awaiter(this, void 0, void 0, function* () {
         const pathName = path.join('./', fileName);
         const file = yield fs.readFile(pathName, ({ encoding: 'utf8' }));
         return file;
     });
-}
-function parseCalNumbers(line) {
-    if (line.length === 1) {
-        return parseInt(line + line);
-    }
-    else if (line.length === 2) {
-        return parseInt(line);
-    }
-    else {
-        const numberChars = line[0] + line[line.length - 1];
-        return parseInt(numberChars);
-    }
-}
-function readChar(string) {
-    let tempStr = '';
-    for (let i = 0; i < string.length; i++) {
-        const char = string[i];
-        if (char !== '\n' && char !== ' ' && i !== string.length - 1) {
-            tempStr += char;
-        }
-        else {
-            tempStr = '';
-        }
-    }
-}
-function findChar(str, delimiter) {
-    for (let i = 0; i < str.length; i++) {
-        const char = str[i];
-        if (char === delimiter) {
-            return i;
-        }
-    }
-}
-function sumM(line) {
-    console.log(line);
-    return;
-    //  let tempStr = '';
-    //  const numPosition = [];
-    //
-    //  for (let i=0;i<line.length;i++) {
-    //    const char = line[i];
-    //    if (char === ':') {
-    //
-    //    }
-    //    if (char !== '\n' && char !== ' ' && i!==line.length-1) {
-    //      if (checkNum(char)) {
-    //        numPosition.push(tempStr.length);
-    //      }
-    //      tempStr += char;
-    //    } else {
-    //      evaluateStr(tempStr, numPosition);
-    //      tempStr = '';
-    //    }
-    //  }
 }
 const fileName = process.argv[2];
 const data = loadFile(fileName);
@@ -97,7 +39,6 @@ data.then((chunk) => {
             }
         });
         totalPoints += cardPoints;
-        console.log(wins, cardPoints, totalPoints);
     }
     console.log(totalPoints);
 });
