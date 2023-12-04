@@ -1,0 +1,10 @@
+{
+  "name": "advent_of_code",
+  "packageManager": "yarn@3.6.1",
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^20.10.2",
+    "@types/typescript": "^2.0.0",
+    "typescript": "^5.3.2"
+  }
+}
